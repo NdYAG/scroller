@@ -35,11 +35,11 @@
 	if (!global.core) {
 		global.core = { effect : {} };
 
-	} else if (!core.effect) {
-		core.effect = {};
+	} else if (!global.core.effect) {
+		global.core.effect = {};
 	}
 
-	core.effect.Animate = {
+	global.core.effect.Animate = {
 
 		/**
 		 * A requestAnimationFrame wrapper / polyfill.
@@ -221,7 +221,7 @@
 					completedCallback && completedCallback(desiredFrames - (dropCounter / ((now - start) / millisecondsPerSecond)), id, percent === 1 || duration == null);
 				} else if (render) {
 					lastFrame = now;
-					core.effect.Animate.requestAnimationFrame(step, root);
+					global.core.effect.Animate.requestAnimationFrame(step, root);
 				}
 			};
 
@@ -229,11 +229,10 @@
 			running[id] = true;
 
 			// Init first step
-			core.effect.Animate.requestAnimationFrame(step, root);
+			global.core.effect.Animate.requestAnimationFrame(step, root);
 
 			// Return unique animation ID
 			return id;
 		}
 	};
 })(this);
-
