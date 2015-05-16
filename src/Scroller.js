@@ -58,6 +58,9 @@ var Scroller;
 
 			/** Maximum zoom level */
 			maxZoom: 3,
+			
+			/** Zoom bouncing */
+			zoomResilience: 2,
 
 			/** Multiply or decrease scrolling speed **/
 			speedMultiplier: 1,
@@ -784,7 +787,7 @@ var Scroller;
 					level = level / self.__lastScale * scale;
 
 					// Limit level according to configuration
-					level = Math.max(Math.min(level, self.options.maxZoom), self.options.minZoom);
+					level = Math.max(Math.min(level, self.options.maxZoom + self.options.zoomResilience), self.options.minZoom - self.options.zoomResilience);
 
 					// Only do further compution when change happened
 					if (oldLevel !== level) {
@@ -1023,6 +1026,13 @@ var Scroller;
 
 					}
 				}
+			}
+			
+			if (self.__zoomLevel > self.options.maxZoom) {
+				self.zoomTo(self.options.maxZoom, self.options.animating)
+			}
+			if (self.__zoomLevel < self.options.minZoom) {
+				self.zoomTo(self.options.minZoom, self.options.animating)
 			}
 
 			// Fully cleanup list
