@@ -124,10 +124,10 @@
 			scrollingComplete: NOOP,
 			
 			/** This configures the amount of change applied to deceleration when reaching boundaries  **/
-	            penetrationDeceleration : 0.03,
+			penetrationDeceleration : 0.03,
 
-	            /** This configures the amount of change applied to acceleration when reaching boundaries  **/
-	            penetrationAcceleration : 0.08
+			/** This configures the amount of change applied to acceleration when reaching boundaries  **/
+			penetrationAcceleration : 0.08
 
 		};
 
