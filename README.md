@@ -1,3 +1,13 @@
+This is a fork of [Zynga Scroller](http://github.com/zynga/scroller/).
+
+I made some minor modifications to suit my personal needs:
+
+* Code in CommonJS style
+* Build with webpack
+* Add `zoomResilience` option to enhance zoom interaction (Scroller could be zoomed to a larger scale than `maxZoom`, but will bounce back to `maxZoom` after you release your fingers. Same for `minZoom`). The default value is `2`. Set it to `0` in scroller's config if you don't need it. 
+
+
+
 Zynga Scroller
 ==============
 
