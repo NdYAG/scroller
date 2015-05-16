@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "phantomjs ./node_modules/qunit-phantomjs-runner/runner.js ./test/index.html 10"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   "devDependencies": {
     "expose-loader": "^0.6.0",
     "node-libs-browser": "^0.5.0",
+    "qunit-phantomjs-runner": "^2.1.0",
     "webpack": "^1.9.6"
   }
 }
